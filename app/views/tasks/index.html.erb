@@ -1,0 +1,34 @@
+<h1> Checklist App </h1>
+
+<!-- <p><a href="/tasks/new"></a>Create New Task</p> -->
+<% if @task.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@task.errors.count, "error") %> stopped this task from being created:</h2>
+
+    <ul>
+    <% @task.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@task) do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+  <%= f.submit %>
+<% end %>
+
+<div>
+  <ul>
+    <% @tasks.each do |task| %>
+      <li>
+        <%= task.body %>
+        <%= task.position %>
+        <%= task.completed %>
+      </li>
+    <% end %>
+  </ul>
+</div>

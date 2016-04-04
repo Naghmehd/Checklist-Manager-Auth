@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+(1..20).each do |num|
+  task = Task.create!(completed: Faker::Boolean.boolean,
+                      body: Faker::Hipster.sentence(3),
+                      position: num)
+end

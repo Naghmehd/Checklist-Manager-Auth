@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
- validates :completed, presence: true
+ validates :completed, inclusion: [true, false]
  validates :body, presence: true
- validates :position, presence: true
+ validates :position, presence: true, uniqueness: true
 end
