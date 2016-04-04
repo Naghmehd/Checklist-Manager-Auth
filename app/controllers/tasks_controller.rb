@@ -31,7 +31,14 @@ class TasksController < ApplicationController
     end
   end
 
-  def  update
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(params[:body]) if params[:user].present?
+    redirect_to root_path
   end
 
   def destroy
@@ -39,6 +46,17 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to root_path
     flash[:alert] = "Task deleted"
+
+  end
+
+  def completed
+    params[:tasks_checkbox].each do |check|
+      task_id = check
+      t = Task.find_by_id(task_id)
+      t.update_attribute(:completed, true)
+      flash[:notice] = "Task completed"
+    end
+    redirect_to root_path
   end
 
 end
