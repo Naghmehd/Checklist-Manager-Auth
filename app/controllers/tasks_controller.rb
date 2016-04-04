@@ -36,10 +36,9 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
-    @task.update(params[:body]) if params[:user].present?
-    redirect_to root_path
-  end
+   Task.update(params[:id], task_params)
+   redirect_to root_path
+ end
 
   def destroy
     @task = Task.find(params[:id])
@@ -57,6 +56,12 @@ class TasksController < ApplicationController
       flash[:notice] = "Task completed"
     end
     redirect_to root_path
+  end
+
+  private
+
+  def task_params
+    params.require(:task).permit(:body, :position, :completed)
   end
 
 end
