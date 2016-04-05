@@ -1,6 +1,6 @@
-<h1>Editing task</h1>
-  <div>
-    <%= form_for :task, url: "/tasks/#{@task.}", method: :PUT do |f| %>
+<h1 class="header">Editing task</h1>
+  <div class="edit">
+    <%= form_for :task, url: "/tasks/task", method: :PUT do |f| %>
 
      <p>
       <%= f.label :body %><br>
@@ -9,6 +9,14 @@
      <p>
       <%= f.label :body %><br>
       <%= f.text_field :body %>
+     </p>
+     <p>
+      <%= f.label :position %><br>
+      <%= f.text_field :position %>
+     </p>
+     <p>
+      <%= f.label :position %><br>
+      <%= f.text_field :position %>
      </p>
      <p>
       <%= f.submit %>
