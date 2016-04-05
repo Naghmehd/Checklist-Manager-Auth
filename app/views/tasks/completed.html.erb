@@ -1,0 +1,24 @@
+<h3> Completed list </h3>
+<div>
+  <%= form_tag "/tasks/complete", :method => "post") do |f| %>
+  <ul>
+      <%= @tasks.each do |task| %>
+        <%=  if task.completed == true %>
+          <li>[style="color:grey;"]
+            <%= check_box_tag "tasks_checkbox[]",task.id %>
+            <%= task.body %>
+            <%=  link_to 'Delete task', task, method: :delete %>
+        <%= else %>
+            <%= check_box_tag "tasks_checkbox[]",task.id %>
+            <%= task.body %>
+            <%= link_to 'Delete task', task, method: :delete  %>
+          </li>
+
+          <%= submit_tag("Complete Task", class: "btn btn-large btn-primary") %>
+      <% end %>
+  </ul>
+
+</div>
+
+
+<%= link_to "completed", completed_task_path(task) %>

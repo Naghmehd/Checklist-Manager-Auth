@@ -1,15 +1,18 @@
-<h1> Checklist App </h1>
+<div class="col s6 offset-s6">
+  <h1 class="header">Checklist</h1>
+</div>
 
-<!-- <p><a href="/tasks/new"></a>Create New Task</p> -->
-<% if @task.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@task.errors.count, "error") %> stopped this task from being created:</h2>
+<div class="row">
+  <% if @task.errors.any? %>
+  <div class="col s12" ><span class="flow-text"></span>
+  </div>
 
-    <ul>
+  <div id="error_message" class="col s6 offset-s6"><span class="flow-text"><%= pluralize(@task.errors.count, "error") %> stopped this task from being created:</span>
     <% @task.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <%= msg %>
     <% end %>
-    </ul>
+  </div>
+
   </div>
 <% end %>
 
@@ -23,14 +26,15 @@
 
 <div>
   <ul>
+    <hr>
     <% @tasks.each do |task| %>
-      <li>
-        <%= task.position %>
+      <li><%= task.position %>.
         <%= task.body %>
-        <%= task.completed %>
-        <%= link_to "Edit Task", edit_task_path(task) %>
+      </li>
+      <li><%= link_to "Edit Task", edit_task_path(task) %>
         <%= button_to "Delete", task_path(task), method: :delete, class: 'Task' %>
       </li>
+      <hr>
     <% end %>
   </ul>
 </div>

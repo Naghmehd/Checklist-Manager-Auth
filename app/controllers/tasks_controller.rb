@@ -38,7 +38,7 @@ class TasksController < ApplicationController
   def update
    Task.update(params[:id], task_params)
    redirect_to root_path
- end
+  end
 
   def destroy
     @task = Task.find(params[:id])
@@ -48,7 +48,7 @@ class TasksController < ApplicationController
 
   end
 
-  def completed
+  def complete
     params[:tasks_checkbox].each do |check|
       task_id = check
       t = Task.find_by_id(task_id)
