@@ -1,4 +1,4 @@
-class Api::tasksController < ApplicationController
+class Api::TasksController < ApplicationController
   def index
     render json: task.all
   end
@@ -7,7 +7,7 @@ class Api::tasksController < ApplicationController
     render json: task.find(params.fetch(:id))
                      .to_json(methods: [:prev, :next],
                               except: :user_id)
-                              
+
   rescue ActiveRecord::RecordNotFound
     render json: { message: "Not found", status: 404 }, status: 404
   end
