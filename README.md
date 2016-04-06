@@ -28,4 +28,4 @@ Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
 
-https://nameless-hamlet-73463.herokuapp.com/
+https://checklist-manager-auth-naghmeh.herokuapp.com/sign_in

@@ -1,15 +1,17 @@
 
 <div>
   <ul>
-    
+
     <% @tasks.each do |task| %>
-      <li><%= task.position %>.
+      <%= check_box_tag 'completed', task.id, task.completed %> 
+      <li>
+        <%= task.position %>.
         <%= task.body %>
       </li>
-      <li><%= link_to "Edit Task", edit_task_path(task) %>
+      <li>
+        <%= link_to "Edit Task", edit_task_path(task) %>
         <%= button_to "Delete", task_path(task), method: :delete, class: 'Task' %>
       </li>
-
     <% end %>
   </ul>
 </div>
