@@ -1,20 +1,4 @@
-<h1 class="header">Editing task</h1>
-  <div class="edit">
-    <%= form_for :task, url: "/tasks/task", method: :PUT do |f| %>
+<h2> Edit this post </h2>
 
-     <p>
-      <%= f.label :body %><br>
-      <%= f.text_field :body %>
-     </p>
-     <p>
-      <%= f.label :body %><br>
-      <%= f.text_field :body %>
-     </p>
-  
-     <p>
-      <%= f.submit %>
-     </p>
-    <% end %>
 
-    <% link_to 'Home', tasks_path %>
- </div>
+<%= render partial: 'form' %>

@@ -24,6 +24,7 @@ class SessionsController < ApplicationController
       flash[:alert] = "Username and password did not match any records"
       render :sign_in
     end
+  end
 
   def destroy
     session[:user_id] = nil
@@ -33,5 +34,5 @@ class SessionsController < ApplicationController
 
   def sign_out
   end
-  
+
 end
