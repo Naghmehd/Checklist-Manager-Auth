@@ -48,16 +48,6 @@ class TasksController < ApplicationController
 
   end
 
-  def complete
-    params[:tasks_checkbox].each do |check|
-      task_id = check
-      t = Task.find_by_id(task_id)
-      t.update_attribute(:completed, true)
-      flash[:notice] = "Task completed"
-    end
-    redirect_to root_path
-  end
-
   private
 
   def task_params
