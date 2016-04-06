@@ -25,10 +25,3 @@
 <section>
   <%= @task.body %>
 </section>
-<section class='comments'>
-  <h3>Comments (<%= @comments.count %>) <%= link_to "New Comment", new_task_comment_path(@task), class: 'btn btn-default' %></h3>
-  <hr />
-  <% @comments.each do |comment| %>
-    <p><%= comment.body %></p>
-  <% end %>
-</section>

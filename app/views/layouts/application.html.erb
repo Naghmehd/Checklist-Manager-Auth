@@ -11,7 +11,7 @@
 <nav class='navbar navbar-default'>
   <ul class="nav navbar-nav navbar">
     <% if signed_in? %>
-      <li> <%= link_to "Write a New Post", new_post_path, class: "btn btn-default" %> </li>
+      <li> <%= link_to "Write a New Post", new_task_path, class: "btn btn-default" %> </li>
       <li> <%= link_to "Sign Out", sign_out_path, method: :DELETE, class: "btn btn-danger" %> </li>
     <% else %>
       <li> <%= link_to "Sign In", sign_in_path, class: "btn btn-primary" %> </li>
@@ -27,8 +27,6 @@
 
   <%= yield %>
 
-  <footer>
-    <p>First Viewed Post: <em><%= cookies[:first_post] %></em></p>
-    <p>Last Viewed Post: <em><%= cookies[:last_post] %></em></p>
-  </footer>
+
 </div>
+</body>

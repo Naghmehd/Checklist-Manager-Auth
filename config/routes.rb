@@ -6,6 +6,7 @@ Rails.application.routes.draw do
  delete '/sign_out', to: 'sessions#destroy'
 
  resources :users, only: [:new, :create]
+
  resources :tasks
 
  namespace :api do

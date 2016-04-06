@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def new
-    redirect_to root_path
+    @task = Task.new
   end
 
   def create
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
 
     if @task.save
       flash[:notice] = "Task added"
-      redirect_to root_path
+      redirect_to tasks_path
     else
       flash[:alert] = "Task could not be saved"
       @tasks = Task.order(position: :asc)
