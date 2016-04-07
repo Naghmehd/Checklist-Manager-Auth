@@ -19,74 +19,46 @@
 @import 'bootstrap';
 
 
-.spacer {
- padding-left: 5px;
- margin-right: 10px;
- border-right: 2px solid lightgray;
-}
-
-footer {
- font-size: 0.5em;
-}
-
-body {
- background-color: #fff;
- color: #333;
- font-family: verdana, arial, helvetica, sans-serif;
- font-size: 13px;
- line-height: 18px;
-}
-
-p, ol, ul, td {
- font-family: verdana, arial, helvetica, sans-serif;
- font-size: 13px;
- line-height: 18px;
-}
-
-pre {
- background-color: #eee;
- padding: 10px;
- font-size: 11px;
-}
-
-div {
- &.field, &.actions {
-   margin-bottom: 10px;
- }
-}
-
 #notice {
- color: green;
+  color: green;
 }
 
-.field_with_errors {
- color: white;
- padding: 2px;
- background-color: red;
- display: table;
+.inline-form {
+  display: inline;
 }
 
-#error_explanation {
- width: 450px;
- border: 2px solid red;
- padding: 7px;
- padding-bottom: 0;
- margin-bottom: 20px;
- background-color: #f0f0f0;
+.greeting {
+  margin-left: 3em;
+}
 
- h2 {
-   text-align: left;
-   font-weight: bold;
-   padding: 5px 5px 5px 15px;
-   font-size: 12px;
-   margin: -7px;
-   margin-bottom: 0px;
-   background-color: #c00;
-   color: #fff;
- }
+ul {
+  list-style: none;
+}
 
- ul li {
-   font-size: 12px;
-   list-style: square;
-  }
- }
+.container.list {
+  margin: 1em;
+}
+
+.full-list {
+  padding: 1em;
+}
+
+a.btn.btn-default.edit {
+  margin-right: 13px;
+}
+
+.btn.btn-primary.create {
+  margin-top: 12px;
+}
+
+.btn.btn-primary.sign-in {
+  color: #fff;
+}
+
+.row.new-user-name {
+
+}
+
+.row.new-password-user {
+  
+}
