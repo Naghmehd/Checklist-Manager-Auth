@@ -1,17 +1,17 @@
 <h1>Create a new account</h1>
 
     <%= form_for(@user) do |f| %>
-      <div class='row'>
-        <%= f.label :name %>
+      <div class='row m-r-7'>
+        <%= f.label :name, class: "create-name-label" %>
         <%= f.text_field :name %>
       </div>
       <div class='row'>
-        <%= f.label :username %>
+        <%= f.label :username, class: "create-username-label" %>
         <%= f.text_field :username %>
       </div>
 
       <div class='row'>
-        <%= f.label :password %>
+        <%= f.label :password, class: "create-password-label" %>
         <%= f.password_field :password %>
       </div>
       <div class='row'>
